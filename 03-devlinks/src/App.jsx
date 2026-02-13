@@ -16,7 +16,7 @@ function App() {
       
       
       
-      <div clasName="switch">botão switch </div>
+      <div className="switch">botão switch </div>
 
       <ul>
         <Link url={""}>Inscreva-se</Link>
