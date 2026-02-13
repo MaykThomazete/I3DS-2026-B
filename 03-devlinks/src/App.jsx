@@ -2,21 +2,32 @@
 import './App.css';
 import Link from './components/Link/Link';
 import Perfil from './components/Perfil/Perfil';
-import SocialLink from './components/Perfil/SocialLink/SocialLink';
+import SocialLink from './components/SocialLink/SocialLink';
 import Rodape from './components/Rodape/Rodape';
+import Switch from './components/Switch/Switch';
+import { useState } from 'react';
 
 
 
 function App() {
+const[isLight,setIsLight] = useState(true)
+
+const troca = () => {
+  setIsLight(isLight);
+};
+
   return (
-     <div id='App'>
+     <div id='App' className={isLight ? "light" : ""}>
       <Perfil fotoPerfil={"https://placehold.co/100"} >Mayk Thomazete</Perfil>
 
+      <Switch troca={troca} isLight={isLight} >
+
+      </Switch>
       
       
       
       
-      <div className="switch">botão switch </div>
+    
 
       <ul>
         <Link url={""}>Inscreva-se</Link>
@@ -24,7 +35,7 @@ function App() {
           <Link url={""}>Me pague um café!</Link>
            <Link url={""}>Conheça o Curso DEV</Link>
       </ul>
-      <div className="socialLinks">
+      <div id="SocialLink">
        
         <SocialLink url={"https://github.com"} icon={"logo-github"} />
          <SocialLink url={"https://instagram.com"} icon={"logo-instagram"} />
@@ -32,7 +43,7 @@ function App() {
            <SocialLink url={"https://linkedin.com"} icon={"logo-linkedin"} />
       </div>
       
-<Rodape>MaykThomazete</Rodape>
+<Rodape>Mayk Thomazete</Rodape>
 </div>
   );
 };
