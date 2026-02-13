@@ -16,6 +16,6 @@ li a {
 }
 
 li a:hover {
-    background-color: var(--surface-color hover);
+    background-color: var(--surface-color-hover);
     border-color: var(--text-color);
 }
