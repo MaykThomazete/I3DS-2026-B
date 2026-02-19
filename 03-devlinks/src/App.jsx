@@ -1,54 +1,43 @@
+import { useState } from "react";
+import "./App.css";
+import Link from "./components/Link/Link";
+import Perfil from "./components/Perfil/Perfil";
+import Rodape from "./components/Rodape/Rodape";
+import SocialLink from "./components/SocialLink/SocialLink";
+import Switch from "./components/Switch/Switch";
 
-import './App.css';
-import Link from './components/Link/Link';
-import Perfil from './components/Perfil/Perfil';
-import SocialLink from './components/SocialLink/SocialLink';
-import Rodape from './components/Rodape/Rodape';
-import Switch from './components/Switch/Switch';
-import { useState } from 'react';
-
-
-
+import foto from "./assets/download.jpg"
 function App() {
-const[isLight,setIsLight] = useState(true)
+  const [isLight, setIsLight] = useState(true);
 
-const troca = () => {
-  setIsLight(isLight);
-};
+  const troca = () => {
+    setIsLight(!isLight);
+  };
 
   return (
-     <div id='App' className={isLight ? "light" : ""}>
-      <Perfil fotoPerfil={"https://placehold.co/100"} >Mayk Thomazete</Perfil>
+    <div id="App" className={isLight ? "light" : ""}>
+      <Perfil fotoPerfil={foto}>Mayk Thomazete</Perfil>
 
-      <Switch troca={troca} isLight={isLight} >
+      <Switch troca={troca} isLight={isLight} />
 
-      </Switch>
-      
-      
-      
-      
-    
-
-      <ul>
-        <Link url={""}>Inscreva-se</Link>
-         <Link url={""}>Minha playlist</Link>
+      <div id="Link">
+        <ul>
+          <Link url={""}>Inscreva-se</Link>
+          <Link url={""}>Minha playlist</Link>
           <Link url={""}>Me pague um café!</Link>
-           <Link url={""}>Conheça o Curso DEV</Link>
-      </ul>
-      <div id="SocialLink">
-       
-        <SocialLink url={"https://github.com"} icon={"logo-github"} />
-         <SocialLink url={"https://instagram.com"} icon={"logo-instagram"} />
-          <SocialLink url={"https://youtube.com"} icon={"logo-youtube"} />
-           <SocialLink url={"https://linkedin.com"} icon={"logo-linkedin"} />
+          <Link url={""}>Conheça o Curso DEV</Link>
+        </ul>
       </div>
-      
-<Rodape>Mayk Thomazete</Rodape>
-</div>
+
+      <div id="SocialLinks">
+        <SocialLink url={"https://github.com"} icon={"logo-github"} />
+        <SocialLink url={"https://instagram.com"} icon={"logo-instagram"} />
+        <SocialLink url={"https://youtube.com"} icon={"logo-youtube"} />
+        <SocialLink url={"https://br.linkedin.com/"} icon={"logo-linkedin"} />
+      </div>
+      <Rodape>MaykThomazete</Rodape>
+    </div>
   );
-};
-     
+}
 
-   
-   export default App
-
+export default App;
