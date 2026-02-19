@@ -1,3 +1,4 @@
+
 import "./App.css";
 
 import logo from "./assets/devflix.png"
@@ -17,7 +18,10 @@ const App = () => {
         />
         <img src={lupa} alt="Botão de ação para pesquisa!" />
 
-      </div>
+</div>
+
+
+
       <Rodape link={"https://github.com/MaykThomazete"}>MaykThomazete</Rodape>
     </div>
   );
