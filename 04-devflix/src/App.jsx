@@ -31,11 +31,7 @@ const App = () => {
     (async () => {
       await searchMovies("Hulk"); // termo para pesquina ao carregar o site
     })();
-<<<<<<< HEAD
   }, []);
-=======
-  }, [searchMovies]);
->>>>>>> 05215638046704404da59ddb2def53c78100e9ea
 
   return (
     <div id="App">
