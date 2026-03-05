@@ -32,10 +32,6 @@ const MovieDescription = (props) => {
               >
                 ▶️ Assistir
               </a>
-<<<<<<< HEAD
-=======
-              {props.testeApi}
->>>>>>> 05215638046704404da59ddb2def53c78100e9ea
             </div>
           </div>
         </div>
