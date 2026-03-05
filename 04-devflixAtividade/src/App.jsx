@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import { useEffect, useState } from "react";
+=======
 import { useEffect, useState, useCallback } from "react";
+>>>>>>> 05215638046704404da59ddb2def53c78100e9ea
 import "./App.css";
 
 import logo from "./assets/devflix.png";
@@ -16,6 +20,15 @@ const App = () => {
   const apiUrl = `https://omdbapi.com/?apikey=${apiKey}`;
 
   //Criando a conexão com a API e trazendo informações
+<<<<<<< HEAD
+  const searchMovies = async (title) => {
+    const response = await fetch(`${apiUrl}&s=${title}`);
+    const data = await response.json();
+
+    //Alimentando a variavel movies
+    setMovies(data.Search);
+  };
+=======
   const searchMovies = useCallback(
     async (title) => {
       const response = await fetch(`${apiUrl}&s=${title}`);
@@ -26,6 +39,7 @@ const App = () => {
     },
     [apiUrl],
   );
+>>>>>>> 05215638046704404da59ddb2def53c78100e9ea
 
   useEffect(() => {
     (async () => {

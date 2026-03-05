@@ -6,7 +6,8 @@ import Rodape from "./components/Rodape/Rodape";
 import SocialLink from "./components/SocialLink/SocialLink";
 import Switch from "./components/Switch/Switch";
 
-import foto from "./assets/download.jpg"
+import foto from "./assets/Perfil.png";
+
 function App() {
   const [isLight, setIsLight] = useState(true);
 
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <div id="App" className={isLight ? "light" : ""}>
-      <Perfil fotoPerfil={foto}>Mayk Thomazete</Perfil>
+      <Perfil fotoPerfil={foto}>Gustavo Castello</Perfil>
 
       <Switch troca={troca} isLight={isLight} />
 
@@ -35,7 +36,7 @@ function App() {
         <SocialLink url={"https://youtube.com"} icon={"logo-youtube"} />
         <SocialLink url={"https://br.linkedin.com/"} icon={"logo-linkedin"} />
       </div>
-      <Rodape>MaykThomazete</Rodape>
+      <Rodape>ProfCastello</Rodape>
     </div>
   );
 }
