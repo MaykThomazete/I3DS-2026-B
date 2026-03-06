@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import "./App.css";
 
 import logo from "./assets/devflix.png";
-import lupa from "./assets/search.svg";
+import lupa from "./assets/Lupa.jpg";
 
 import Rodape from "./components/Rodape/Rodape";
 import MovieCard from "./components/MovieCard/MovieCard";

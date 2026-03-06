@@ -1,15 +1,17 @@
 import { useEffect, useState, useCallback } from "react";
 import "./App.css";
 
-import logo from "./assets/1.png";
-import lupa from "./assets/search.svg";
+import logo from "./assets/2.png";
+import lupa from "./assets/Lupa2.0.png";
 
 import Rodape from "./components/Rodape/Rodape";
 import MovieCard from "./components/MovieCard/MovieCard";
+import Switch from "./components/Switch/Switch";
 
-const App = () => {
+function App() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   //Utilizando uma CHAVE de API do arquivo .env
   const apiKey = import.meta.env.VITE_OMDB_API_KEY;
@@ -24,7 +26,7 @@ const App = () => {
       //Alimentando a variavel movies
       setMovies(data.Search);
     },
-    [apiUrl],
+    [apiUrl]
   );
 
   useEffect(() => {
@@ -33,26 +35,29 @@ const App = () => {
     })();
   }, [searchMovies]);
 
+  const trocaTema = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div id="App">
+    <div id="App" className={darkMode ? "dark" : "light"}>
+      <Switch troca={trocaTema} isLight={!darkMode} />
+      
       <img
         id="Logo"
         src={logo}
-        alt="Logotipo do serviço de streaming Devflix, com letras vermelhas e fundo preto, promovendo conteúdo de séries, filmes e entretenimento online."
-      />
+        alt="Logotipo do serviço de streaming Devflix, com letras vermelhas e fundo preto, promovendo conteúdo de séries, filmes e entretenimento online." />
 
       <div className="search">
         <input
           onKeyDown={(e) => e.key === "Enter" && searchMovies(search)}
           onChange={(e) => setSearch(e.target.value)}
           type="text"
-          placeholder="Pesquise por filmes"
-        />
+          placeholder="Pesquise por filmes" />
         <img
           onClick={() => searchMovies(search)}
           src={lupa}
-          alt="Botão de ação para pesquisa!"
-        />
+          alt="Botão de ação para pesquisa!" />
       </div>
 
       {movies?.length > 0 ? (
@@ -65,9 +70,9 @@ const App = () => {
         <h2 className="empty">😢 Filme não encontrado 😢</h2>
       )}
 
-      <Rodape link={"https://github.com/ProfCastello"}>ProfCastello</Rodape>
+      <Rodape link={"https://github.com/MaykThomazete"}>MaykThomazete</Rodape>
     </div>
   );
-};
+}
 
 export default App;
